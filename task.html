@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<h1 id="dev"></h1>
+
+    <script>
+
+        let text = 'I love JavaSCRIPT'
+        let index = 0
+        let always = Infinity
+                dev.innerHTML = text [index]
+       let progress = setInterval(() => {
+            if (index == text.length-1) {
+                clearInterval(progress)
+             setTimeout(() => {
+                dev.innerHTML=''
+                index = 0
+                dev.innerHTML += text[index]
+                progress = setInterval(() => {
+                    if (index == text.length-1) {
+                     clearInterval(progress)
+                    }else{
+                        index++
+                       dev.innerHTML += text[index]
+
+                }
+                }, 1000);
+             }, 1000);   
+            }else{
+                index++ 
+                       dev.innerHTML += text[index]
+            }
+        },1000)
+          
+
+      
+
+
+        //   let text = " i am a developer";
+        //   let index = 0;
+        // dev.innerHTML = text [index]
+        // let typing = setInterval(() => {
+        //     if (index ==text.length-1) {
+        //        clearInterval(typing) 
+        //     }else{
+        //         index++;
+        //         dev.innerHTML += text[index]
+        //     }
+        // }, 1000);
+        // let output = document.getElementById('output')
+        // output.innerHTML = 'I Love JAVASCRIPT'
+        // let index = ''
+
+        // let interval = setInterval(() => {
+        //    output.innerHTML +=  [index.length]
+        // }, 2000);
+
+        // setTimeout(() => {
+        //     clearInterval(interval)
+        //     output.innerText = ""
+        // }, 20000);
+    
+       
+         
+  </script>
+</body>
+</html>
