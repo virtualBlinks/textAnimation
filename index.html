@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<h1 id="dev"></h1>
+
+    <script>
+
+// function typeText() {  
+//     let text = "I am a developer";
+//     let index = 0;
+//     let dev = document.getElementById('dev');   
+//     dev.innerHTML = text[index];
+    
+//     let typing = setInterval(() => {
+//         if (index === text.length -1) {
+//             clearInterval(typing); 
+//             setTimeout(typeText, 1000); 
+//         } else {
+//             index++;
+//             dev.innerHTML += text[index];
+//         }
+//     }, 100); 
+// }
+// typeText();
+
+
+// *****************
+function typeText() {
+    let text = "I am a developer";
+    let index = -1; 
+    let dev = document.getElementById('dev');
+    let isTypingForward = true; 
+
+    let typing = setInterval(() => {
+        if (isTypingForward) {
+            if (index === text.length - 1) {
+                isTypingForward = false; 
+                setTimeout(() => {
+                    index--;
+                }, 1000);
+            } else {
+                index++;
+            }
+        } else {
+            if (index === -1) {
+                isTypingForward = true;
+                clearInterval(typing); 
+                setTimeout(typeText, 1000); 
+                return;
+            } else {
+                index--;
+            }
+        }
+        dev.innerHTML = text.slice(0, index + 1);
+    }, 100); 
+}
+
+typeText();
+
+
+// ********************************
+
+// function typeText() {
+//     let staticText = "I am a ";
+//     let dynamicText = "developer";
+//     let dynamicIndex = 0;
+//     let dev = document.getElementById('dev');
+//     dev.innerHTML = staticText;
+
+//     let typing = setInterval(() => {
+//         if (dynamicIndex === dynamicText.length) {
+//             clearInterval(typing);
+//             setTimeout(typeText, 2000);
+//         } else {
+//             dev.innerHTML = staticText + dynamicText.substring(0, dynamicIndex + 1);
+//             dynamicIndex++;
+//         }
+//     }, 100);
+// }
+
+// typeText();
+
+// **************
+// function typeText() {
+//     let staticText = "I am a ";
+//     let dynamicText = "developer";
+//     let dynamicIndex = 0;
+//     let isTypingForward = true;
+//     let dev = document.getElementById('dev');
+//     dev.innerHTML = staticText;
+
+//     let typing = setInterval(() => {
+//         if (isTypingForward) {
+//             if (dynamicIndex === dynamicText.length) {
+//                 isTypingForward = false;
+//             } else {
+//                 dev.innerHTML = staticText + dynamicText.substring(0, dynamicIndex + 1);
+//                 dynamicIndex++;
+//             }
+//         } else {
+//             if (dynamicIndex === 0) {
+//                 clearInterval(typing);
+//                 setTimeout(typeText, 2000);
+//             } else {
+//                 dev.innerHTML = staticText + dynamicText.substring(0, dynamicIndex);
+//                 dynamicIndex--;
+//             }
+//         }
+//     }, 100);
+// }
+
+// typeText();
+
+// *******************
+
+// function typeText() {
+//     let staticText = "I am a ";
+//     let dynamicText = "developer";
+//     let dynamicIndex = 0;
+//     let isTypingForward = true;
+//     let dev = document.getElementById('dev');
+//     dev.innerHTML = staticText;
+
+//     let typing = setInterval(() => {
+//         if (isTypingForward) {
+//             if (dynamicIndex === dynamicText.length) {
+//                 isTypingForward = false;
+//             } else {
+//                 dev.innerHTML = staticText + dynamicText.substring(0, dynamicIndex + 1);
+//                 dynamicIndex++;
+//             }
+//         } else {
+//             if (dynamicIndex === -1) { // Changed condition to -1
+//                 clearInterval(typing);
+//                 setTimeout(typeText, 2000);
+//             } else {
+//                 dev.innerHTML = staticText + dynamicText.substring(0, dynamicIndex);
+//                 dynamicIndex--;
+//             }
+//         }
+//     }, 100);
+// }
+
+// typeText();
+
+    //  ******************************  
+
+        // let output = document.getElementById('output')
+        // output.innerHTML = 'I Love JAVASCRIPT'
+        //  index = ''
+
+        // let interval = setInterval(() => {
+        //    output.innerHTML +=  [index.length]
+        // }, 2000);
+
+        // setTimeout(() => {
+        //     clearInterval(interval)
+        //     output.innerText = ""
+        // }, 20000);
+    
+       
+         
+  </script>
+</body>
+</html>
