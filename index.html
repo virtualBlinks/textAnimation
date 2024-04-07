@@ -7,9 +7,40 @@
 </head>
 
 <body>
-<h1 id="dev"></h1>
+    <input class="name" id="search" type="text" placeholder="Search" />
+</h1>
 
     <script>
+
+function typeText() {
+    let arrayText = ["Information Technology (IT)", "Healthcare", "Education", "Finance", "Marketing", "Engineering", "Human Resources (HR)", "Customer Service", "Sales", "Administration", "Manufacturing", "Retail", "Hospitality", "Consulting", "Legal", "Design", "Research and Development (R&D)", "Construction", "Media and Communications", "Transportation and Logistics"];
+    let name = document.querySelector('.name');
+    let stringIndex = 0;
+    let charIndex = 0;
+
+    let typing = setInterval(() => {
+        if (charIndex === arrayText[stringIndex].length) {
+            charIndex = 0;
+            stringIndex = (stringIndex + 1) % arrayText.length; // Move to the next string or loop back to the beginning
+            name.value = ''; // Clear the text before displaying the next string
+        }
+        name.value += arrayText[stringIndex][charIndex];
+        charIndex++;
+    }, 100); // Adjust the interval for typing speed
+}
+
+typeText();
+
+
+
+
+
+
+
+
+
+
+        // ****************************8
 
 // function typeText() {  
 //     let text = "I am a developer";
@@ -31,37 +62,37 @@
 
 
 // *****************
-function typeText() {
-    let text = "I am a developer";
-    let index = -1; 
-    let dev = document.getElementById('dev');
-    let isTypingForward = true; 
+// function typeText() {
+//     let text = "I am a developer";
+//     let index = -1; 
+//     let dev = document.getElementById('dev');
+//     let isTypingForward = true; 
 
-    let typing = setInterval(() => {
-        if (isTypingForward) {
-            if (index === text.length - 1) {
-                isTypingForward = false; 
-                setTimeout(() => {
-                    index--;
-                }, 1000);
-            } else {
-                index++;
-            }
-        } else {
-            if (index === -1) {
-                isTypingForward = true;
-                clearInterval(typing); 
-                setTimeout(typeText, 1000); 
-                return;
-            } else {
-                index--;
-            }
-        }
-        dev.innerHTML = text.slice(0, index + 1);
-    }, 100); 
-}
+//     let typing = setInterval(() => {
+//         if (isTypingForward) {
+//             if (index === text.length - 1) {
+//                 isTypingForward = false; 
+//                 setTimeout(() => {
+//                     index--;
+//                 }, 1000);
+//             } else {
+//                 index++;
+//             }
+//         } else {
+//             if (index === -1) {
+//                 isTypingForward = true;
+//                 clearInterval(typing); 
+//                 setTimeout(typeText, 1000); 
+//                 return;
+//             } else {
+//                 index--;
+//             }
+//         }
+//         dev.innerHTML = text.slice(0, index + 1);
+//     }, 100); 
+// }
 
-typeText();
+// typeText();
 
 
 // ********************************
